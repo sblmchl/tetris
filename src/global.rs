@@ -31,9 +31,9 @@ pub const GAME_SIDE_WIDTH: f32 = 5.5;
 pub const GAME_WIDTH: f32 = BOARD_WIDTH as f32 + GAME_SIDE_WIDTH * 2.0;
 
 pub const X_MOVE_DELAY: u64 = 130;
-pub const Y_MOVE_DELAY: u64 = 55;
+pub const Y_MOVE_DELAY: u64 = 50;
 pub const GRAVITY_DELAY: u64 = 1000;
-pub const LOCK_DELAY: u64 = 180;
+pub const LOCK_DELAY: u64 = 170;
 
 pub const TETROMINO_SPAWN_POS: Vec2 = Vec2::new(BOARD_WIDTH as f32 / 2.0 - 2.0, -3.0);
 

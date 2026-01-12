@@ -122,6 +122,11 @@ impl<'a> Game<'a> {
             }
         }
 
+        if (time - self.last_gravity >= self.gravity_delay) && !is_key_down(self.controls.soft_drop) {
+            self.direction.y = 1.0;
+            self.last_gravity = time;
+        }
+
         if is_key_pressed(self.controls.hard_drop) {
             self.drop_tetromino();
             return;
@@ -138,11 +143,6 @@ impl<'a> Game<'a> {
             self.rotate_tetromino(clockwise);
         } else if is_key_pressed(self.controls.rotate_counterclockwise) {
             self.rotate_tetromino(clockwise);
-        }
-
-        if time - self.last_gravity >= self.gravity_delay {
-            self.direction.y = 1.0;
-            self.last_gravity = time;
         }
 
         if !self.check_collision(self.piece, Vec2::new(self.direction.x, 0.0))
